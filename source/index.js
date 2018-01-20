@@ -18,6 +18,32 @@ var articles = [
     }
 ];
 
+class App extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = 
+    { 
+      text:[]
+    };
+  }
+  componentWillMount(){
+    console.log("hello world");
+    setTimeout(() =>
+      this.setState(
+        {
+          text : articles
+        }
+      ),
+      1000
+    );
+    }  
+  render(){
+    return(
+      <NewsFeed articles={this.state.text}/>      
+    );
+  }
+}
+
 const root = document.getElementById('root');
 
-ReactDOM.render(<NewsFeed articles={articles}/>, root);
+ReactDOM.render(<App/>, root);
