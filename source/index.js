@@ -9,11 +9,29 @@ var alertText = "Here is an alert";
   null, // any props ('attributes') we're giving it
   'Hello Hacker News' // The children of this element.
 ); */
+/* function Element() {
+return (
+    <div 
+    style={{fontSize:36, color: 'green'}}
+    onClick={() => window.alert(alertText)}
+    >{hackerString}</div>
+  )
+} */
 
-const element = <div 
-style={{fontSize:36, color: 'green'}}
-onClick={() => window.alert(alertText)}
->{hackerString}</div>;
+function Element(props) {
+  return (
+      <div>
+        {props.message} 
+      </div>
+    )
+  } 
+
+const element =
+  <Element
+    message={hackerString}
+  />
+
+
 
 /* const number = 19;
 const element = React.createElement(
