@@ -1,45 +1,43 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import Article from "./Component/Article/";
+import HackerTitle from "./Component/HackerTitle/";
+
 var hackerString = "Hello Hacker News";
 var alertText = "Here is an alert";
 
-/* const element = React.createElement(
-  'div', // the type of element we're creating
-  null, // any props ('attributes') we're giving it
-  'Hello Hacker News' // The children of this element.
-); */
-/* function Element() {
-return (
-    <div 
-    style={{fontSize:36, color: 'green'}}
-    onClick={() => window.alert(alertText)}
-    >{hackerString}</div>
-  )
-} */
+var articleTitle = "FAKE NEWS ARTICLE";
+var articleDescription = 
+"In today's connected world, it is rare to find an application or piece of malware that doesn't talk to a remote server. Let's control this!" +
+"LuLu is the free open-source macOS firewall that aims to block unknown outgoing connections, unless explicitly approved by the user.";
+var articleLink = "https://news.ycombinator.com/";
 
-function Element(props) {
-  return (
+function App (){
+  return(
       <div>
-        {props.message} 
+        <HackerTitle 
+          message={hackerString}
+          />
+        <Article
+          title ={articleTitle}
+          description = {articleDescription}
+          link = {articleLink}
+        />
+        <Article
+          title ={articleTitle}
+          description = {articleDescription}
+          link = {articleLink}
+        />
+        <Article
+          title ={articleTitle}
+          description = {articleDescription}
+          link = {articleLink}
+        />
       </div>
-    )
-  } 
-
-const element =
-  <Element
-    message={hackerString}
-  />
-
-
-
-/* const number = 19;
-const element = React.createElement(
-  'div',
-  null,
-  number
-); */
+  )
+}
 
 const root = document.getElementById('root');
 
-ReactDOM.render(element, root);
+ReactDOM.render(<App/>, root);

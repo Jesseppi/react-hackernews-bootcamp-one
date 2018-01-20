@@ -1,0 +1,23 @@
+.articleBlock{
+  padding-top: 40px;
+  border-bottom: 0.125rem dashed lightgray;
+}
+
+.articleTitleClass {
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  color: darkblue;     
+}
+
+.articleHeaderBlock{
+  margin-bottom: 20px;    
+}
+
+.articleText{
+  margin-bottom: 20px;
+}
+
+.a{
+  text-decoration: none;
+}
