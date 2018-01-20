@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-import NewsFeed from "./Component/NewsFeed/"
+import NewsFeed from "./Component/NewsFeed/";
+import getArticles from 'hacker-news-top-ten'
 
 var articleTitle = "FAKE NEWS ARTICLE";
 var articleDescription = 
@@ -23,24 +23,20 @@ class App extends React.Component{
     super(props);
     this.state = 
     { 
-      text:[]
+      articles:[]
     };
+    this.loaded = false;
   }
-  componentWillMount(){
-    console.log("hello world");
-    setTimeout(() =>
-      this.setState(
-        {
-          text : articles
-        }
-      ),
-      1000
-    );
+  componentWillMount(){    
+    getArticles().then(articles => {
+      this.setState({ articles })      
+    });
+    this.state.loaded = true;
     }  
   render(){
-    return(
-      <NewsFeed articles={this.state.text}/>      
-    );
+    return this.state.loaded ?(
+    <NewsFeed articles={this.state.articles} />) :
+    (<div> Loading . . . </div>)          
   }
 }
 

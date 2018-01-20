@@ -10,10 +10,10 @@ export default function NewsFeed(props){
     return(
         <div>
         {props.articles.map(value => (
-            <Article key={value.index}
+            <Article key={value.id}
                 title ={value.title}
                 description = {value.description}
-                link = {value.link}
+                link = {value.url}
             />      
         )
     )
